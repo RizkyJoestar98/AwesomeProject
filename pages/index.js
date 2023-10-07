@@ -6,6 +6,8 @@ import VideoScreen from "./video";
 import SearchScreen from "./search";
 import ProfileScreen from "./profile";
 import SplashScreen from "./splash";
+import EditProfileScreen from "./edit";
+import Pesan from "./pesan";
 
 export{
     HomeScreen,
@@ -16,5 +18,7 @@ export{
     SearchScreen,
     ProfileScreen,
     SplashScreen,
+    Pesan,
+    EditProfileScreen,
 
 }

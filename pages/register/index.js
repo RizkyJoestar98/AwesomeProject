@@ -15,8 +15,18 @@ import {
   ScrollView
 } from 'react-native';
 
-
 function RegisterScreen({navigation}) {
+
+const onhandleLoginButton = ()=>{
+  navigation.navigate('Login')
+}
+
+const submitRegister = () =>{
+  // call api
+  // tampilkan pesan
+  alert('Data berhasil disimpan')
+}
+
 return (
   <SafeAreaView>
     <ScrollView>
@@ -27,10 +37,9 @@ return (
           icon={IconFacebook}
           style={style.loginFacebook}
           title="Log in with Facebook"
-          onPress={() => navigation.push('Login')}
           />
 
-          <Text style={[style.bodyText, {marginTop:20}]}>__________________  OR  __________________</Text>
+          <Text style={[style.bodyText, {marginTop:20}]}>OR</Text>
           
           <TextInput
             style={[style.input, {marginTop:20}]}
@@ -51,12 +60,8 @@ return (
             style={[style.input, {marginTop:10}]}
             placeholder="Password"
           />
-          <PrimaryButton 
-          style={style.loginFacebook}
-          title="Sign up"
-          onPress={() => navigation.navigate('Login')}
-          />
-        <Text style={[style.bodyText,{marginTop:20}]}>
+
+        <Text style={style.bodyText}>
           People who use or service may have uploaded your contact 
           information to Instagram. 
 
@@ -69,7 +74,17 @@ return (
             By signing up, you agree to our Terms, Privacy Policy and Cookies Policy
           </Text>
 
-         
+          <PrimaryButton 
+          style={style.loginFacebook}
+          onPress={submitRegister}
+          title="Sign up"
+          />
+
+        <PrimaryButton 
+          style={style.loginFacebook}
+          title="Login"
+          onPress={onhandleLoginButton}
+          />
       </View>
     </ScrollView>
   </SafeAreaView>
@@ -83,7 +98,7 @@ const style = StyleSheet.create({
   },
   logoTop:{
       alignSelf:'center',
-      marginTop:60
+      marginTop:20
   },
   bodyText:{
     textAlign: 'center',
@@ -95,13 +110,8 @@ const style = StyleSheet.create({
   },
   input:{
     height: 40,
-    borderColor: 'gray',
-   
-    borderRadius: 5,
-    paddingLeft: 10,
-    fontSize: 16,
-    color: 'black',
-    backgroundColor: 'white',
+    borderWidth: 1,
+    padding: 10,
   }
 })
 

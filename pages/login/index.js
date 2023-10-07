@@ -46,7 +46,7 @@ function LoginScreen({navigation}) {
             <PrimaryButton 
             style={style.loginFacebook}
             title="Login"
-            onPress={() => navigation.push('Home')}
+            onPress={() => navigation.push('Main')}
             />
             <TouchableOpacity onPress={() => navigation.push('Register')}>
             <Text style={[style.bodyText, {marginTop:20}]}>
